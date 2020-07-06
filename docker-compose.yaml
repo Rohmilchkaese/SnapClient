@@ -1,0 +1,12 @@
+version: "3"
+services:
+#snapcast-client
+   snapcast-client:
+     container_name: snapcast-client
+     image: snapcast-client
+     command: snapclient -h raspberrypi.lan
+     devices:
+       - /dev/snd
+     restart: always
+     depends_on:
+       - snapcast-server
